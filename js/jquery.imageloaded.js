@@ -34,7 +34,6 @@
     selectors.imgs.each(function(){
       var $img = $(this),
           image = new Image();
-      image.src = $img.attr('src');
       image.onload = function() {
         loadedCnt++;
         loaded();
@@ -47,6 +46,7 @@
         abortCnt++;
         loaded();
       }
+      image.src = $img.attr('src');
     });
 
     function loaded() {
